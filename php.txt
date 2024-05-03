@@ -1,0 +1,8 @@
+-r-xr-xr-x. 1 apache apache 32381 May  3 01:55 settings.php
+ chmod a+w /var/www/drupal/sites/default/settings.php 
+[root@localhost ~]# vim /var/www/drupal/sites/default/settings.php 
+[root@localhost ~]# chmod go-w  /var/www/drupal/sites/default/settings.php 
+[root@localhost ~]# chmod 555 /var/www/drupal/sites/default/settings.php 
+[root@localhost ~]# systemctl restart httpd php-fpm
+
+
