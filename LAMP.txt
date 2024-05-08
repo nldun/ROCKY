@@ -1,0 +1,209 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+menginstall LAMP dan DRUPAL di ROCKY LINUX
+ibaratkan sudah mengisntall rocky linux di komputer, lalu restart.
+hubungkan kabel LAN internet pada komputer dan masuk ke root dan ketikan perintah:
+
+rkfill unblock wifi
+dnf install NetworkManager-wifi
+nmcli device set wlp1s0 managed yes
+nmtui
+
+lalu hubungkan ke internet lewat wifi saja dan cabut LAN kabel nya.
+
+install minimal GUI di ROCKY LINUX
+dnf install xorg-x11-xinit
+dnf install xorg-x11-drivers
+dnf install xterm
+dnf install matchbox-window-manager
+
+lalu masuk ke local user ketikan:
+vim .xinitrc
+masukan "exec matchbox-window-manager"
+lalu ketikan perintah "startx"
+perintah matchbox-window-manager
+ctrl+alt+x = buka xterm terminal
+alt+c = close terminal
+
+konfigurasikan xterm agar tampilan nya berbeda:
+vim .Xresources pada local user
+
+! Terminal Colors
+XTerm*vt100.background:     #212121
+XTerm*vt100.foreground:     #80FF80
+XTerm*cursorColor:          #ffffff
+
+XTerm*scrollTtyOutput:          false
+XTerm*scrollKey:                true
+XTerm*scrollBar:                false
+XTerm*eightBitInput:            false
+XTerm*cursorBlink:              true
+
+! Use a truetype font and size.
+xterm*faceName: adobe-courier-bold 
+xterm*faceSize: 10
+
+tahap selanjutnya install HTTPD PHP DAN MYSQL
+disini saya merekomendasikan untuk mengisntall Mysql terlebih dahulu di uruti php dan httpd, perintahnya sebagai berikut:
+
+dnf module list mysql
+dnf module disable mysql
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+yum install --nogpgcheck mysql
+
+EPEL & REMI repository
+sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+install REMI repository
+sudo dnf -y install http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+dnf makecache
+sudo dnf repolist
+Install PHP 8.2
+ dnf module reset php -y
+Enable PHP 8.2 REMI module which contains the packages to be installed.
+dnf module -y install php:remi-8.2
+Since the required packages are available in the repository added to the system, let’s install of PHP 8.2 on Rocky Linux 8 / AlmaLinux 8 using dnf or yum package manager tool.
+sudo dnf -y install php
+$ php -v
+Step 4: Install PHP 8.2 modules
+[root@localhost ~]# dnf install php-{cli,gd,curl,zip,mysqlnd,gmp,intl,pdo,mbstring,mysqli,fpm,json,common,mysql,pear,tidy,soap,bcmath,xmlrpc,pecl-uploadprogress,xml,opcachei,fpm,cgi,gettext,imap}
+ php --modules
+
+dnf install epel-release
+dnf install http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+dnf --disablerepo="*" --enablerepo="remi" list available
+dnf --disablerepo="*" --enablerepo="remi-safe" list available
+dnf install php:remi-8.1
+dnf install php81 php-{cli,gd,curl,zip,mbstring,mysqlnd,common,gmp,fpm,curl,intl,pdo,mbstring,gd,xml,cli,zip,mysqli,fpm,json,common,mysql,zip,gd,intl,mbstring,curl,xml,pear,tidy,soap,bcmath,xmlrpc}
+setelah install php jangan lupa untuk cek modul nya, perintagnya:
+php -m
+
+jangan lupa untuk menginstall aplikasi ini htop:
+dnf install htop
+
+setelah sampai disini saatnya mengkonfigurasikan HTTPD, PHP, dan MYSQL
+mysql terlebih dahulu:
+
+systemctl enable --now mysqld
+kalau restart karena pakai mysql-community-server maka: systemctl restart mysqld.service
+systemctl status mysqld
+
+first find the default password set by MySQL for the root user, using:
+saat pertama menginstall mysql comminity server, password nya telah di isi sebelumnya, dan untuk melihat password itu berada di file:
+
+sudo grep 'temporary password' /var/log/mysqld.log
+
+simpan password lalu isinikan perintah awal:
+mysql_secure_installation
+
+mysql -u root -p
+nama database dan nama user bisa diganti dan jangan lupa mengingat password root mysql dan menyimpannya di file menggunakan teks editor.
+
+CREATE DATABASE drupal_db;
+CREATE USER 'eki_my'@'localhost' IDENTIFIED BY "STRONG PASSWORD";
+GRANT ALL PRIVILEGES ON drupal_db.* TO 'eki_my'@'localhost';
+FLUSH PRIVILEGES;
+QUIT;
+
+
+selanjutnya PHP:
+vim /etc/php.ini
+ganti ke >> memory_limit = 256M
+karena pakai versi php8.1 maka:
+systemctl enable --now php81-php-fpm.service 
+systemctl restart php81-php-fpm.service 
+
+selanjutnya HTTPD sebagai berikut:
+
+systemctl enable --now httpd
+firewall-cmd --add-service={http,https} --permanent
+firewall-cmd --reload
+
+setelah semuanya terkonfigurasi saatnya menginstall drupal
+
+cd /var/www/
+wget https://ftp.drupal.org/files/projects/drupal-7.100.tar.gz
+tar -xpvf drupal.tar.gz
+mv drupal-*/ /var/www/drupal
+chown -R apache:apache /var/www/drupal
+chmod -R 755 /var/www/drupal
+mkdir /var/www/drupal/sites/default/files
+cp /var/www/drupal/sites/default/default.settings.php /var/www/drupal/sites/default/settings.php
+sudo semanage fcontext -a -t httpd_sys_rw_content_t "/var/www/drupal(/.*)?"
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/drupal/sites/default/settings.php'
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/drupal/sites/default/files'
+sudo restorecon -Rv /var/www/drupal
+sudo restorecon -v /var/www/drupal/sites/default/settings.php
+sudo restorecon -Rv /var/www/drupal/sites/default/files
+sudo chown -R apache:apache /var/www/drupal
+
+buat vhost untuk drupal:
+vim /etc/httpd/conf.d/drupal.conf
+
+isikan:
+<VirtualHost *:80>
+     ServerName example.com
+     ServerAdmin admin@example.com
+     DocumentRoot /var/www/drupal/
+
+     <Directory /var/www/drupal>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+            RewriteEngine on
+            RewriteBase /
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+    </Directory>
+</VirtualHost>
+
+lalu pergi ke /etc/hosts
+vim /etc/hosts
+tambahkan:
+127.0.0.2	userdddrupal.com
+lalu restart httpd
+systemctl restart httpd
+
+
+masuk ke brower lalu ketikan userdddrupal.com
+
+!!!SELESAI!!! ANDA SEKARANG TELAH MENGINSTALL DRUPAL DAN LAMP STACK DI LINUX. !!!SELAMAT MENGULIK!!!
+
+
+tambahan untuk xorg config
+
+vim /etc/X11/xorg.conf.d/20-intel-modesetting.conf
+Section "Device"
+  Identifier "Intel Graphics"
+  Driver "modesetting"
+EndSection
+
+vim /etc/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+  Identifier "Intel Graphics"
+  Driver "intel"
+EndSection
+
+
