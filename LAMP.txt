@@ -8,6 +8,7 @@ https://www.drupal.org/project/utf8mb4_convert
 
 https://www.oreilly.com/library/view/x-window-system/9780937175149/Chapter05.html
 
+http://ftp.iij.ad.jp/pub/linux/centos-vault/6.6/isos/x86_64/
 
 
 
