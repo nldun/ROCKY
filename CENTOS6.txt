@@ -4,3 +4,32 @@ All things considered about security and it being EOL, you can still make yum us
 curl https://www.getpagespeed.com/files/centos6-eol.repo --output /etc/yum.repos.d/CentOS-Base.repo
 Or, update repo configuration manually.
 https://vault.centos.org/
+
+https://duckduckgo.com/?t=ffab&q=centos+6.6+wifi+package&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D7nXDCoaS2iY
+
+vim /etc/sysconfig/network-script/ifcfg-eth0
+DEVICE=eth8
+HWADDR=00:0C
+TYPE=Ethernet
+UUID=2222222-0000
+ONBOOT=yes
+MM_CONTROLLED=yes
+BOOTPROTO=static
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=192.168.1.1
+
+service network restart
+
+ping topgeeks.info
+ping google.com
+vim /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME=topgeekstest.topgeeks.info
+reboot
+
+ifconfig
+ping topgeeks.info
+
+
