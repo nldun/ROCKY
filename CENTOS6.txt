@@ -1,0 +1,6 @@
+
+https://serverfault.com/questions/1045414/how-can-i-install-or-update-software-with-yum-in-centos-6-when-centos-6-stopped
+All things considered about security and it being EOL, you can still make yum usable in CentOS 6:
+curl https://www.getpagespeed.com/files/centos6-eol.repo --output /etc/yum.repos.d/CentOS-Base.repo
+Or, update repo configuration manually.
+https://vault.centos.org/
