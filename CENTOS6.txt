@@ -32,4 +32,46 @@ reboot
 ifconfig
 ping topgeeks.info
 
+yum install wireless-tools
+
+ifconfig
+ping topgeeks.info
+/etc/sysconfig/network
+
+TYPE=Wireless
+DEVICE=wlan0
+BOOTPROTO=dhcp
+BROADCAST=192.168.0.255
+HWADDR=00:12:BF:64:A0:E4
+NETMASK=255.255.255.0
+ONBOOT=yes
+ONHOTPLUG=yes
+PEERDNS=no
+USERCTL=yes
+IPV6INIT=no
+ESSID=yourssid
+CHANNEL=11
+MODE=Managed
+rate=150Mb/s
+
+
+Setting a WEP key
+/etc/sysconfig/network
+KEY=YOURWEPKEYHERE
+
+Installing the wireless-tools
+yum install wireless-tools
+iwlist wlan0 scan
+iwconfig wlan0 essid yourssid key "YOURWEPKEY"
+Replace "yourssid" and "YOURWEBKEY" with your own SSID and WEP key
+
+final
+ping www.google.com >> /dev/null &
+phy0 - rt2500usb_set_device_state: Error - Device failed to enter state 3 (-16). phy0 - rt2x00lib_autowakeup: Error - device failed to wakeup.
+iwconfig wlan0 power off
+
+https://www.goodbytes.be/article/connecting-centos-6-linux-to-a-wifi-network-with-a-wep-key
+
+
+
 
