@@ -1,7 +1,12 @@
+link sorotan:
+https://www.linode.com/docs/guides/how-to-install-drush-on-centos-8/
+https://docs.aivhub.com/aiv/aiv%20usecases/backuprestoremysql_db_linux/
 
+https://ruslan.rocks/posts/bash-php-command-not-found
 
+https://www.drupal.org/project/utf8mb4_convert
 
-
+https://www.oreilly.com/library/view/x-window-system/9780937175149/Chapter05.html
 
 
 
