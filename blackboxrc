@@ -1,0 +1,34 @@
+session.screen0.slit.placement:	CenterRight
+session.screen0.slit.direction:	Horizontal
+session.screen0.slit.onTop:	False
+session.screen0.slit.autoHide:	False
+session.screen0.toolbar.onTop:	False
+session.screen0.toolbar.autoHide:	False
+session.screen0.toolbar.placement:	BottomRight
+session.screen0.toolbar.widthPercent:	30
+session.screen0.enableToolbar:	True
+session.screen0.workspaces:	2
+session.screen0.workspaceNames:	Layar 1,Layar 2,Workspace 3,Workspace 4
+session.screen0.strftimeFormat:	%I:%M %p
+session.disableBindingsWithScrollLock:	False
+session.imageDither:	OrderedDither
+session.menuFile:	/home/stream/.blackbox/menu
+session.autoRaiseDelay:	400
+session.shadeWindowWithMouseWheel:	False
+session.fullMaximization:	True
+session.focusLastWindow:	True
+session.opaqueMove:	True
+session.focusNewWindows:	False
+session.placementIgnoresShaded:	True
+session.changeWorkspaceWithMouseWheel:	False
+session.focusModel:	SloppyFocus
+session.styleFile:	/usr/share/blackbox/styles/Artwiz
+session.windowSnapThreshold:	0
+session.windowPlacement:	CenterPlacement
+session.maximumColors:	0
+session.opaqueResize:	False
+session.colPlacementDirection:	TopToBottom
+session.toolbarActionsWithMouseWheel:	False
+session.edgeSnapThreshold:	0
+session.doubleClickInterval:	250
+session.rowPlacementDirection:	LeftToRight
