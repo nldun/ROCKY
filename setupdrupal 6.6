@@ -1,0 +1,14 @@
+setup drupal cent os
+
+Allow HTTP service in Linux firewall.
+# firewall-cmd --permanent --add-service=http
+success
+# firewall-cmd --reload
+success
+
+Change owner of Drupal 8 software to nginx user.
+# chown -R nginx:nginx /var/www/drupal8/
+# restorecon -R /var/www/drupal8/
+
+mportantly, set the SELinux rule on the folder “/var/www/html/drupal/sites/” as below:
+# chcon -R -t httpd_sys_content_rw_t /var/www/html/drupal/sites/
