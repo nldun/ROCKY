@@ -44,3 +44,14 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=0
 metadata_expire=never
 
+
+paket
+xorg-x11-server-Xvfb
+xorg-x11-server-Xorg
+xorg-x11-xinit 
+liberation-fonts
+yum install make automake gcc gcc-c++ kernel-devel
+yum install wget git libX11-devel libXft-devel libXinerama-devel
+wget https://dl.suckless.org/dwm/dwm-6.1.tar.gz
+wget https://dl.suckless.org/tools/dmenu-4.8.tar.gz
+wget https://dl.suckless.org/st/st-0.8.1.tar.gz
