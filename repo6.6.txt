@@ -49,9 +49,10 @@ paket
 xorg-x11-server-Xvfb
 xorg-x11-server-Xorg
 xorg-x11-xinit 
+xorg-x11-drivers
 terminus-fonts
 yum install make automake gcc gcc-c++ kernel-devel
 yum install wget git libX11-devel libXft-devel libXinerama-devel
-wget https://dl.suckless.org/dwm/dwm-6.1.tar.gz
+wget https://dl.suckless.org/dwm/dwm-5.8.tar.gz
 wget https://dl.suckless.org/tools/dmenu-4.8.tar.gz
 wget https://dl.suckless.org/st/st-0.8.1.tar.gz
