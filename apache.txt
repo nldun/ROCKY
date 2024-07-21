@@ -1,0 +1,120 @@
+====================================== N/S Matched: apache ======================================
+ant-apache-bcel.i686 : Optional apache bcel tasks for ant
+ant-apache-bsf.i686 : Optional apache bsf tasks for ant
+ant-apache-log4j.i686 : Optional apache log4j tasks for ant
+ant-apache-oro.i686 : Optional apache oro tasks for ant
+ant-apache-regexp.i686 : Optional apache regexp tasks for ant
+ant-apache-resolver.i686 : Optional apache resolver tasks for ant
+pcp-pmda-apache.i686 : Performance Co-Pilot (PCP) metrics for the Apache webserver
+apache-jasper.noarch : Jasper OSGi Bundle
+apache-jasper-javadoc.noarch : Javadoc for Jasper
+apache-tomcat-apis.noarch : Tomcat Servlet and JSP APIs
+apr.i686 : Apache Portable Runtime library
+apr-util.i686 : Apache Portable Runtime Utility library
+httpd.i686 : Apache HTTP Server
+httpd-devel.i686 : Development interfaces for the Apache HTTP server
+httpd-manual.noarch : Documentation for the Apache HTTP server
+httpd-tools.i686 : Tools for use with the Apache HTTP Server
+mod_auth_mellon.i686 : A SAML 2.0 authentication module for the Apache Httpd Server
+mod_auth_mysql.i686 : Basic authentication for the Apache web server using a MySQL database
+mod_auth_pgsql.i686 : Basic authentication for the Apache HTTP Server using a PostgreSQL database
+mod_authz_ldap.i686 : LDAP authorization module for the Apache HTTP Server
+mod_dav_svn.i686 : Apache httpd module for Subversion server
+mod_dnssd.i686 : An Apache HTTPD module which adds Zeroconf support
+mod_intercept_form_submit.i686 : Apache module to intercept login form submission and run PAM
+                               : authentication
+mod_lookup_identity.i686 : Apache module to retrieve additional information about the
+                         : authenticated user
+mod_nss.i686 : SSL/TLS module for the Apache HTTP server
+mod_perl.i686 : An embedded Perl interpreter for the Apache HTTP Server
+mod_revocator.i686 : CRL retrieval module for the Apache HTTP server
+mod_ssl.i686 : SSL/TLS module for the Apache HTTP Server
+mod_wsgi.i686 : A WSGI interface for Python web applications in Apache
+php-zts.i686 : Thread-safe PHP interpreter for use with the Apache HTTP Server
+python-qpid-qmf.i686 : Python QMF library for Apache Qpid
+qpid-tests.noarch : Conformance tests for Apache Qpid
+qpid-tools.noarch : Management and diagnostic tools for Apache Qpid
+tomcat6.noarch : Apache Servlet/JSP Engine, RI for Servlet 2.5/JSP 2.1 API
+tomcat6-admin-webapps.noarch : The host-manager and manager web applications for Apache Tomcat
+tomcat6-docs-webapp.noarch : The docs web application for Apache Tomcat
+tomcat6-javadoc.noarch : Javadoc generated documentation for Apache Tomcat
+tomcat6-jsp-2.1-api.noarch : Apache Tomcat JSP API implementation classes
+tomcat6-servlet-2.5-api.noarch : Apache Tomcat Servlet API implementation classes
+tomcat6-webapps.noarch : The ROOT and examples web applications for Apache Tomcat
+ws-commons-util.noarch : Common utilities from the Apache Web Services Project
+
+====================================== N/S Matched: apache ======================================
+ant-apache-bcel
+ant-apache-bsf
+ant-apache-log4j
+ant-apache-oro
+ant-apache-regexp
+ant-apache-resolver
+pcp-pmda-apache
+apache-jasper
+apache-jasper-javadoc
+apache-tomcat-apis
+apr
+apr-util
+httpd
+httpd-devel
+httpd-manual
+httpd-tools
+mod_auth_mellon
+mod_auth_mysql
+mod_auth_pgsql
+mod_authz_ldap
+mod_dav_svn
+mod_dnssd
+mod_intercept_form_submit
+mod_lookup_identity
+mod_nss
+mod_perl
+mod_revocator
+mod_ssl
+mod_wsgi
+php-zts
+python-qpid-qmf
+qpid-tests
+qpid-tools
+tomcat6
+tomcat6-admin-webapps
+tomcat6-docs-webapp
+tomcat6-javadoc
+tomcat6-jsp-2.1-api
+tomcat6-servlet-2.5-api
+tomcat6-webapps
+ws-commons-util
+
+
+====================================== N/S Matched: httpd =======================================
+libmicrohttpd-devel.i686 : Development files for libmicrohttpd
+libmicrohttpd-doc.noarch : Documentation for libmicrohttpd
+httpd.i686 : Apache HTTP Server
+httpd-devel.i686 : Development interfaces for the Apache HTTP server
+httpd-manual.noarch : Documentation for the Apache HTTP server
+httpd-tools.i686 : Tools for use with the Apache HTTP Server
+libmicrohttpd.i686 : Lightweight library for embedding a webserver in applications
+mod_auth_mellon.i686 : A SAML 2.0 authentication module for the Apache Httpd Server
+mod_dav_svn.i686 : Apache httpd module for Subversion server
+mod_dnssd.i686 : An Apache HTTPD module which adds Zeroconf support
+
+libmicrohttpd-devel
+libmicrohttpd-doc
+httpd
+httpd-devel
+httpd-manual
+httpd-tools
+libmicrohttpd
+mod_auth_mellon
+mod_dav_svn
+mod_dnssd
+
+sudo yum install libmicrohttpd-devel libmicrohttpd-doc httpd httpd-devel httpd-manual httpd-tools libmicrohttpd mod_auth_mellon mod_dav_svn mod_dnssd
+
+
+
+
+
+
+sudo yum install ant-apache-bcel ant-apache-bsf ant-apache-log4j ant-apache-oro ant-apache-regexp ant-apache-resolver pcp-pmda-apache apache-jasper apache-jasper-javadoc apache-tomcat-apis apr apr-util httpd httpd-devel httpd-manual httpd-tools mod_auth_mellon mod_auth_mysql mod_auth_pgsql mod_authz_ldap mod_dav_svn mod_dnssd mod_intercept_form_submit mod_lookup_identity mod_nss mod_perl mod_revocator mod_ssl mod_wsgi php-zts python-qpid-qmf qpid-tests qpid-tools tomcat6 tomcat6-admin-webapps tomcat6-docs-webapp tomcat6-javadoc tomcat6-jsp-2.1-api tomcat6-servlet-2.5-api tomcat6-webapps ws-commons-util

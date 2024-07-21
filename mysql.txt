@@ -1,0 +1,63 @@
+====================================== N/S Matched: mysql =======================================
+MySQL-python.i686 : An interface to MySQL
+apr-util-mysql.i686 : APR utility library MySQL DBD driver
+bacula-director-mysql.i686 : Bacula Director with MySQL database support
+bacula-storage-mysql.i686 : MySQL Bacula storage daemon files
+dovecot-mysql.i686 : MySQL back end for dovecot
+freeradius-mysql.i686 : MySQL support for freeradius
+libdbi-dbd-mysql.i686 : MySQL plugin for libdbi
+mod_auth_mysql.i686 : Basic authentication for the Apache web server using a MySQL database
+mysql.i686 : MySQL client programs and shared libraries
+mysql-bench.i686 : MySQL benchmark scripts and data
+mysql-connector-java.noarch : Official JDBC driver for MySQL
+mysql-connector-odbc.i686 : ODBC driver for MySQL
+mysql-devel.i686 : Files for development of MySQL applications
+mysql-embedded.i686 : MySQL as an embeddable library
+mysql-embedded-devel.i686 : Development files for MySQL as an embeddable library
+mysql-libs.i686 : The shared libraries required for MySQL clients
+mysql-server.i686 : The MySQL server and related files
+mysql-test.i686 : The test suite distributed with MySQL
+pcp-pmda-mysql.i686 : Performance Co-Pilot (PCP) metrics for MySQL
+perl-DBD-MySQL.i686 : A MySQL interface for perl
+php-mysql.i686 : A module for PHP applications that use MySQL databases
+qt-mysql.i686 : MySQL driver for Qt's SQL classes
+qt3-MySQL.i686 : MySQL drivers for Qt 3's SQL classes
+rsyslog-mysql.i686 : MySQL support for rsyslog
+rsyslog7-mysql.i686 : MySQL support for rsyslog
+
+
+====================================== N/S Matched: mysql =======================================
+MySQL-python
+apr-util-mysql
+bacula-director-mysql
+bacula-storage-mysql
+dovecot-mysql
+freeradius-mysql
+libdbi-dbd-mysql
+mod_auth_mysql
+mysql
+mysql-bench
+mysql-connector-java
+mysql-connector-odbc
+mysql-devel
+mysql-embedded
+mysql-embedded-devel
+mysql-libs
+mysql-server
+mysql-test
+pcp-pmda-mysql
+perl-DBD-MySQL
+php-mysql
+qt-mysql
+qt3-MySQL
+rsyslog-mysql
+rsyslog7-mysql
+
+
+sudo yum install MySQL-python apr-util-mysql bacula-director-mysql bacula-storage-mysql dovecot-mysql freeradius-mysql libdbi-dbd-mysql mod_auth_mysql mysql mysql-bench mysql-connector-java mysql-connector-odbc mysql-devel mysql-embedded mysql-embedded-devel mysql-libs mysql-server mysql-test pcp-pmda-mysql perl-DBD-MySQL php-mysql qt-mysql qt3-MySQL rsyslog-mysql rsyslog7-mysql
+
+Error: rsyslog7 conflicts with rsyslog-5.8.10-10.el6_6.i686
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
+
+hapus salah satu rsyslog7 atau tsyslog

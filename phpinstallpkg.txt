@@ -1,0 +1,79 @@
+cups-php.i686 : Common Unix Printing System - php module
+graphviz-php.i686 : PHP extension for graphviz
+php.i686 : PHP scripting language for creating dynamic web sites
+php-bcmath.i686 : A module for PHP applications for using the bcmath library
+php-cli.i686 : Command-line interface for PHP
+php-common.i686 : Common files for PHP
+php-dba.i686 : A database abstraction layer module for PHP applications
+php-devel.i686 : Files needed for building PHP extensions
+php-embedded.i686 : PHP library for embedding in applications
+php-fpm.i686 : PHP FastCGI Process Manager
+php-gd.i686 : A module for PHP applications for using the gd graphics library
+php-imap.i686 : A module for PHP applications that use IMAP
+php-intl.i686 : Internationalization extension for PHP applications
+php-ldap.i686 : A module for PHP applications that use LDAP
+php-mbstring.i686 : A module for PHP applications which need multi-byte string handling
+php-mysql.i686 : A module for PHP applications that use MySQL databases
+php-odbc.i686 : A module for PHP applications that use ODBC databases
+php-pdo.i686 : A database access abstraction module for PHP applications
+php-pear.noarch : PHP Extension and Application Repository framework
+php-pecl-apc.i686 : APC caches and optimizes PHP intermediate code
+php-pgsql.i686 : A PostgreSQL database module for PHP
+php-process.i686 : Modules for PHP script using system process interfaces
+php-pspell.i686 : A module for PHP applications for using pspell interfaces
+php-recode.i686 : A module for PHP applications for using the recode library
+php-snmp.i686 : A module for PHP applications that query SNMP-managed devices
+php-soap.i686 : A module for PHP applications that use the SOAP protocol
+php-tidy.i686 : Standard PHP module provides tidy library support
+php-xml.i686 : A module for PHP applications which use XML
+php-xmlrpc.i686 : A module for PHP applications which use the XML-RPC protocol
+php-zts.i686 : Thread-safe PHP interpreter for use with the Apache HTTP Server
+rrdtool-php.i686 : PHP RRDtool bindings
+uuid-php.i686 : PHP support for Universally Unique Identifier library
+php-enchant.i686 : Human Language and Character Encoding Support
+php-pecl-apc-devel.i686 : APC developer files (header)
+php-pecl-memcache.i686 : Extension to work with the Memcached caching daemon
+
+
+
+cups-php
+graphviz-php
+php
+php-bcmath
+php-cli
+php-common
+php-dba
+php-devel
+php-embedded
+php-fpm
+php-gd
+php-imap
+php-intl
+php-ldap
+php-mbstring
+php-mysql
+php-odbc
+php-pdo
+php-pear
+php-pecl-apc
+php-pgsql
+php-process
+php-pspell
+php-recode
+php-snmp
+php-soap
+php-tidy
+php-xml
+php-xmlrpc
+php-zts
+rrdtool-php
+uuid-php
+php-enchant
+php-pecl-apc-devel
+php-pecl-memcache
+
+cups-php graphviz-php php php-bcmath php-cli php-common php-dba php-devel php-embedded php-fpm php-gd php-imap php-intl php-ldap php-mbstring php-mysql php-odbc php-pdo php-pear php-pecl-apc php-pgsql php-process php-pspell php-recode php-snmp php-soap php-tidy php-xml php-xmlrpc php-zts rrdtool-php uuid-php php-enchant php-pecl-apc-devel php-pecl-memcache
+
+
+
+sudo yum install cups-php graphviz-php php php-bcmath php-cli php-common php-dba php-devel php-embedded php-fpm php-gd php-imap php-intl php-ldap php-mbstring php-mysql php-odbc php-pdo php-pear php-pecl-apc php-pgsql php-process php-pspell php-recode php-snmp php-soap php-tidy php-xml php-xmlrpc php-zts rrdtool-php uuid-php php-enchant php-pecl-apc-devel php-pecl-memcache
